@@ -13,6 +13,32 @@ st.set_page_config(
 # Page heading
 st.title("OO Metrics Analyzer")
 
+
+with st.expander("About the OO Metrics"):
+    st.markdown("""
+    **WMC — Weighted Methods per Class**
+    - Counts explicitly declared methods.
+    - Each method has weight 1.
+
+    **COM — Cohesion of Methods**
+    - Measures the proportion of method pairs
+      sharing at least one instance attribute.
+    - Range: 0.0 to 1.0.
+    - Zero-method classes return 0.0.
+    - One-method classes return 1.0.
+
+    **CBO — Coupling Between Objects**
+    - Counts unique referenced classes defined
+      in the analyzed Python file.
+
+    **RFC — Response for a Class**
+    - Counts distinct declared method names
+      and directly called attribute-method names.
+
+    These metrics use simplified static analysis.
+    """)
+
+
 st.write(
     "Analyze Python class definitions using four "
     "Object-Oriented software metrics: "
